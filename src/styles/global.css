@@ -18,18 +18,17 @@ body {
 h1 {
 	margin: 1rem 0;
 	font-size: 2.5rem;
+  text-align: center;
 }
 
 .nav__links {
 	width: 50%;
 	top: 5rem;
 
-	/* display: flex;
-	flex-direction: column; */
-
 	display: none;
 
 	margin: auto;
+  text-align: center;
 }
 
 .nav__links a {
@@ -46,10 +45,6 @@ h1 {
 .nav__links a:focus {
 	background-color: #76a6ff;
 }
-
-/* .expanded {
-  display: unset;
-} */
 
 .expanded {
 	display: flex;
@@ -71,7 +66,6 @@ h1 {
 
 @media screen and (min-width: 636px) {
 	.nav__links {
-		margin-left: 5em;
 		display: block;
 		position: static;
 		width: auto;
