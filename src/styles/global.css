@@ -23,8 +23,12 @@ h1 {
 .nav__links {
 	width: 50%;
 	top: 5rem;
-	display: flex;
-	flex-direction: column;
+
+	/* display: flex;
+	flex-direction: column; */
+
+	display: none;
+
 	margin: auto;
 }
 
@@ -43,8 +47,26 @@ h1 {
 	background-color: #76a6ff;
 }
 
+/* .expanded {
+  display: unset;
+} */
+
 .expanded {
-	display: unset;
+	display: flex;
+	flex-direction: column;
+}
+
+.hamburger {
+	padding-right: 20px;
+	cursor: pointer;
+}
+
+.hamburger .line {
+	display: block;
+	width: 40px;
+	height: 5px;
+	margin-bottom: 10px;
+	background-color: #ff9776;
 }
 
 @media screen and (min-width: 636px) {
@@ -63,5 +85,8 @@ h1 {
 	.nav__links a:hover,
 	.nav__links a:focus {
 		background-color: #ff9776;
+	}
+	.hamburger {
+		display: none;
 	}
 }
