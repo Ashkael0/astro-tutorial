@@ -7,8 +7,17 @@ const { frontmatter } = Astro.props
 	<!-- <h1>{frontmatter.title}</h1> -->
 	<p>Written by {frontmatter.author}</p>
 	<p>Published {frontmatter.pubDate.slice(0, 10)}</p>
-	<p class="hashtags">
+	<!-- <p class="hashtags">
 		{frontmatter.tags.map((tag) => `#${tag.replaceAll(' ', '-')} `)}
+	</p> -->
+	<p class="hashtags">
+		{
+			frontmatter.tags.map((tag) => (
+				<a href={'/tags/' + `${tag.replaceAll(' ', '-')}`} class="tag">
+					#{tag.replaceAll(' ', '-')}
+				</a>
+			))
+		}
 	</p>
 	<img src={frontmatter.image.url} alt={frontmatter.image.alt} />
 	<br />
@@ -24,6 +33,9 @@ const { frontmatter } = Astro.props
 		.hashtags {
 			font-weight: 700;
 			color: midnightblue;
+		}
+		.tag:not(:last-child) {
+			margin-right: 5px;
 		}
 	</style>
 	<slot />
